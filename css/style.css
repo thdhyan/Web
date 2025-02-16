@@ -1,0 +1,141 @@
+/* Base Reset & Global Styles */
+:root {
+  --lavender-light: #8585b4;
+  --lavender-medium: #D8BFD8;
+  --lavender-dark: #9370DB;
+  --grey-light: #D3D3D3;
+  --grey-medium: #A9A9A9;
+  --grey-dark: #696969;
+  --white: hsl(0, 0%, 90%);
+  --black: hsl(0, 0%, 10%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--grey-dark);
+  color: var(--lavender-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Link Styling */
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--lavender-light);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-visible {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  color: var(--white);
+  display: flex;
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+}
+
+.headshot{
+  aspect-ratio: 1/1;
+}
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--black); /* Ensure this color does not hide the particles */
+}
+
+#hero .container {
+  z-index: 2;
+  text-align: left; /* Center align text */
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-date {
+  font-size: 0.9em;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* Additional custom styles can be added here */
+
+.hero-name-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-name-cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lavender-dark);
+  animation: reveal 2s ease forwards;
+}
+
+.lead-cover {
+  display: inline-block; /* Make the element inline-block to fit the text width */
+  position: relative;
+  overflow: hidden;
+}
+
+.lead-cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lavender-dark);
+  animation: reveal 2s ease forwards;
+  animation-delay: 2s; /* Delay to start after the name animation */
+}
+
+#hero .btn {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--lavender-dark);
+  transition: background-color 0.3s ease-in-out;
+  /* Align it to the center */
+  display: inline-block;
+}
+
+#hero .btn:hover {
+  background-color: var(--lavender-dark);
+} 
+
+@keyframes reveal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
